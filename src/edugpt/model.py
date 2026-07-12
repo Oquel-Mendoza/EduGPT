@@ -69,3 +69,37 @@ class EduGPT:
         corpus = self.read_books(books)
         self.save_corpus(corpus)
         print("Corpus construido exitosamente.")
+        # Mostramos la información tan pronto termina de construirlo
+        self.show_corpus_information(books, corpus)
+
+    def show_corpus_information(self, books, corpus):
+        total_books = len(books)
+        total_characters = len(corpus)
+        total_lines = len(corpus.splitlines())
+        total_words = len(corpus.split())
+        print("\n--- Estadísticas del Corpus ---")
+        print(f"Libros procesados: {total_books}")
+        print(f"Caracteres: {total_characters}")
+        print(f"Líneas: {total_lines}")
+        print(f"Palabras: {total_words}")
+        print()
+        print(f"Archivo generado: {self.corpus_path}")
+
+    def show_menu(self):
+        print("\n" + "=" * 45)
+        print(f"         MENÚ PRINCIPAL - {self.name}")
+        print("=" * 45)
+        print("1. Construir corpus")
+        print("2. Entrenar modelo")
+        print("3. Información del modelo")
+        print("0. Salir")
+        print()
+        return input("Seleccione una opción: ")
+
+    def train(self):
+        print()
+        print("=" * 45)
+        print("ENTRENAMIENTO")
+        print("=" * 45)
+        print()
+        print("Esta función estará disponible próximamente.")
